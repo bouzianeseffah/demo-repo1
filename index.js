@@ -1,20 +1,48 @@
-//ternary operator = condition ? codeifTrue : codeifFalse
-let age = 12
-let messsage = age >= 18 ? 'you are an adult' : 'you are a minor ';
-console.log(messsage);
+//switch case
+/*let day = 'j' ;
+switch(day) {
+     case 1: 
+     console.log('it is moday')
+     break;
+     case 2: 
+     console.log('it is tuesday')
+     break;
+     case 3: 
+     console.log('it is whensday')
+     break;
+     case 4: 
+     console.log('it is thursday')
+     break;
+     case 5: 
+     console.log('it is friday')
+     break;
+     case 6: 
+     console.log('it is saturday')
+     break;
+     case 7: 
+     console.log('it is sunday')
+     break;
+     default :
+     console.log(`${day} is not a day`)
+}*/
 
+let testScor = 50;
+let letterGrade;
 
-let time = 16;
-let greeting = time < 12 ? 'good morning ': 'good afternoon';
-console.log(greeting) 
-
-
-let isStudent = false;
-let message = isStudent ? 'you are a student ' : 'you are not a student';
-console.log(message) 
-
-let purchaseAmount = 99;
-let discount = purchaseAmount >= 100 ? 10 : 0;
-console.log(`your total is ${purchaseAmount - purchaseAmount * (discount / 100)}  `)
-
-
+switch(true) {
+    case testScor >= 90:
+    letterGrade = 'A'
+    break
+    case testScor >= 80:
+    letterGrade = 'B'
+    break
+    case testScor >= 70:
+    letterGrade = 'C'
+    break
+    case testScor >= 60:
+    letterGrade = 'D'
+    break
+    default:
+        letterGrade = 'F'
+}
+console.log(letterGrade)
