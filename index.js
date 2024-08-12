@@ -1,35 +1,20 @@
-//.checked = property that determines the checked state of an HTML checkedbox or radio element
-const myCheckBox = document.getElementById('myCheckBox');
-const visaBtn = document.getElementById('visaBtn');
-const masterCard = document.getElementById('masterCardBtn');
-const payBalBtn = document.getElementById('payBalBtn');
-const mySubmit = document.getElementById('mySubmit');
-const subResult = document.getElementById('subResult');
-const paymentResult = document.getElementById('paymentResult');
-mySubmit.onclick = function() {
-    if(myCheckBox.checked){
-        subResult.textContent = `you are suscribed`
-
-    }else{
-        subResult.textContent = `you are NOT suscribed`;
-    }
-    if(visaBtn.checked){
-        paymentResult.textContent = `you are paying with visa`
-    }
-    else if (masterCard.checked) {
-        paymentResult.textContent = `you are paying with MasterCard`;
-    }
-    else if (payBalBtn.checked){
-        paymentResult.textContent = `you are paying with PayBall`;
-
-    }
-    else{
-        paymentResult.textContent = `you must select payment type`;
-
-    }
-}
+//ternary operator = condition ? codeifTrue : codeifFalse
+let age = 12
+let messsage = age >= 18 ? 'you are an adult' : 'you are a minor ';
+console.log(messsage);
 
 
+let time = 16;
+let greeting = time < 12 ? 'good morning ': 'good afternoon';
+console.log(greeting) 
 
+
+let isStudent = false;
+let message = isStudent ? 'you are a student ' : 'you are not a student';
+console.log(message) 
+
+let purchaseAmount = 99;
+let discount = purchaseAmount >= 100 ? 10 : 0;
+console.log(`your total is ${purchaseAmount - purchaseAmount * (discount / 100)}  `)
 
 
