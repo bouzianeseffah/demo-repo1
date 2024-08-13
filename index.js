@@ -1,20 +1,24 @@
-//string methods
+//Method chaining = calling one method after another 
+//                    in one continous line of code 
 
 
-let userName =' boz';
-let result = userName.startsWith(' ');
-if(result){
-    console.log("your userName cant begin with ' '")
-}else{
-    console.log(userName)
-}
+// No method chaining
 
+let userName = window.prompt('enter your username:');
 
 userName = userName.trim();
-userName = userName.toUpperCase();
-userName = userName.repeat();
+let letter = userName.charAt(0);
+letter = letter.toUpperCase();
+
+let extraChars = userName.slice(1) ;
+extraChars = extraChars.toLocaleLowerCase()
+userName = letter + extraChars;
 console.log(userName)
-console.log(userName.charAt(0));
-console.log(userName.indexOf('b'));
-console.log(userName.indexOf('p'));
-console.log(userName.length);
+
+
+//  Method chaining
+
+userName = userName.trim().charAt(0).toUpperCase() + userName.trim().slice(1).toLowerCase()
+
+console.log(userName)
+
