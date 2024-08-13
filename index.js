@@ -1,24 +1,38 @@
-//Method chaining = calling one method after another 
-//                    in one continous line of code 
+// logical operator = used to combine or manipulate
+// boolean value(true or false)
+//        AND = &&
+//        OR = ||
+//        NOT = !
 
 
-// No method chaining
+const temp = 250;
 
-let userName = window.prompt('enter your username:');
-
-userName = userName.trim();
-let letter = userName.charAt(0);
-letter = letter.toUpperCase();
-
-let extraChars = userName.slice(1) ;
-extraChars = extraChars.toLocaleLowerCase()
-userName = letter + extraChars;
-console.log(userName)
+//&&
+if(temp > 0 && temp <= 30) {
+    console.log('the weather is good')
+}
 
 
-//  Method chaining
+else{
+    console.log('the weather is bad')
+}
+//||
+if(temp <= 0 || temp > 30) {
+    console.log('the weather is bad')
+}
 
-userName = userName.trim().charAt(0).toUpperCase() + userName.trim().slice(1).toLowerCase()
 
-console.log(userName)
+else{
+    console.log('the weather is good')
+}
+
+//!
+const isSunny = true;
+if(!isSunny) {
+    console.log('it is sunny');
+
+}else{
+    console.log('it is cloudy')
+}
+
 
