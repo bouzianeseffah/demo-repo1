@@ -1,38 +1,19 @@
-// logical operator = used to combine or manipulate
-// boolean value(true or false)
-//        AND = &&
-//        OR = ||
-//        NOT = !
+//  while loop
+let loggedId = false;
+let userName;
+let password;
 
 
-const temp = 250;
+while(!loggedId){
+    userName = window.prompt('enter your user name');
+    password = window.prompt('enter your user password')
+    if(userName === 'myUserName' && password === 'myPassword'){
+        loggedId = true
+        console.log('you are logged in')
+    }
+    else{
+        console.log('invalid credentials')
+    }
 
-//&&
-if(temp > 0 && temp <= 30) {
-    console.log('the weather is good')
 }
-
-
-else{
-    console.log('the weather is bad')
-}
-//||
-if(temp <= 0 || temp > 30) {
-    console.log('the weather is bad')
-}
-
-
-else{
-    console.log('the weather is good')
-}
-
-//!
-const isSunny = true;
-if(!isSunny) {
-    console.log('it is sunny');
-
-}else{
-    console.log('it is cloudy')
-}
-
 
