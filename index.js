@@ -1,35 +1,22 @@
-//function number is even or odd
-function isEven(number) {
-    if(number % 2 === 0) {
-        return true
+// temperatue conversion program
+const textBox = document.getElementById('textBox');
+const toFahfenheit = document.getElementById('toFahfenheit');
+const toCelcius = document.getElementById('toCelcius');
+const result = document.getElementById('result');
+let temp;
+function convert () {
+    if(toFahfenheit.checked){
+         temp = Number( textBox.value)
+         temp = temp *9 /5 +32
+         result.textContent = temp.toFixed(1) + 'F'
+    }
+    else if(toCelcius.checked){
+        temp = Number( textBox.value)
+         temp = (temp -32) *(5/9)
+         result.textContent = temp.toFixed(1) + 'C'
+
     }
     else{
-      return  false
+        result.textContent = 'select a unit'
     }
 }
-console.log(isEven(10))
-
-
-function isEven2(number) {
-    return  number % 2 === 0 ? true : false
-}
-console.log(isEven(11))
-console.log(isEven2(12))
-
-
-function isValidEmail (email) {
-    if(email.includes('@')){
-        return true;
-    }
-    else{
-        return false
-    }
-
-}
-
-function isValidEmail2(email){
-    return email.includes('@') ? true : false
-
-}
-console.log(isValidEmail('sdgsdbsgamil.con'))
-console.log(isValidEmail2('adfvsd@gmail.com'))
