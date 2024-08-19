@@ -1,22 +1,22 @@
-// temperatue conversion program
-const textBox = document.getElementById('textBox');
-const toFahfenheit = document.getElementById('toFahfenheit');
-const toCelcius = document.getElementById('toCelcius');
-const result = document.getElementById('result');
-let temp;
-function convert () {
-    if(toFahfenheit.checked){
-         temp = Number( textBox.value)
-         temp = temp *9 /5 +32
-         result.textContent = temp.toFixed(1) + 'F'
-    }
-    else if(toCelcius.checked){
-        temp = Number( textBox.value)
-         temp = (temp -32) *(5/9)
-         result.textContent = temp.toFixed(1) + 'C'
+// Dice Roller program
 
+function rollDice(){
+    const numOfDice = document.getElementById('numOfDice').value;
+    const diceResult = document.getElementById('diceResult');
+    const diceImagies = document.getElementById('diceImages');
+    const values = [];
+    const images = [];
+
+    for (let i = 0; i < numOfDice; i++) {
+      const value =Math.floor( Math.random() * 6) + 1;
+      //console.log(value)
+      values.push(value);
+      images.push(`<img src="/dice_images/${value}.png" >`)
     }
-    else{
-        result.textContent = 'select a unit'
-    }
+    //console.log(values)
+    diceResult.textContent = `dice ${values.join(',  ')}`
+    diceImagies.innerHTML = images.join('')
+
+
+
 }
