@@ -1,19 +1,28 @@
-//Arrow functions
-
-const numbers = [1, 2, 3, 4, 5, 6]
+//Object
 
 
-const squares = numbers.map((element) => Math.pow(element, 2));
-console.log(squares);
+const person1 = {
+     fistName: 'boz',
+     lastName: 'sef',
+     age: 32,
+     isEmployed: true,
+     sayHello: function(){console.log('hi')},
+}
 
-const cubes = numbers.map((element) => Math.pow(element, 3));
-console.log(cubes);
-
-const isOdd = numbers.filter((element) => element % 2 === 0);
-console.log(isOdd);
-
-const isEven = numbers.filter((element) => element % 2 !== 0);
-console.log(isEven);
-
-const total = numbers.reduce((accumulator, element) => accumulator + element )
-console.log(total)
+const person2= {
+     fistName: 'fat',
+     lastName: 'bkr',
+     age: 22,
+     isEmployed: false,
+     eat: () => console.log('hello')
+}
+console.log(person1.fistName)
+console.log(person1.lastName)
+console.log(person1.age)
+console.log(person1.isEmployed)
+person1.sayHello()
+console.log(person2.fistName)
+console.log(person2.lastName)
+console.log(person2.age)
+console.log(person2.isEmployed)
+person2.eat()
