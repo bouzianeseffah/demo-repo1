@@ -1,16 +1,23 @@
-// forEach() : mthod used to iterate over the elements 
-//             of an array
-let fruits = ['banana', 'apple', 'orange', 'coconut'];
+//function declaration 
 
-fruits.forEach(capitalize)
-fruits.forEach(display);
+//function hello() {
+ //    console.log('hello')
+//}
+//function expressions
 
-
-function capitalize(element, index, array){
-     array[index] = element.charAt(0).toUpperCase() + element.slice(1) ;
-}
-
-
-function display(element){
-  console.log(element)
-}
+//const hello = function() {
+ //    console.log('hello')
+//}
+//hello()
+const numbers = [1, 2, 3, 4, 5, 6];
+const squares = numbers.map(function(element) {
+     return Math.pow(element, 3)
+});
+const isEven = numbers.filter(function(element){
+     return element % 2 === 0;
+})
+console.log(isEven)
+const isOdd = numbers.filter(function(element){
+     return element % 2 !== 0;
+})
+console.log(isOdd)
