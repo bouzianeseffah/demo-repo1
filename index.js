@@ -1,30 +1,29 @@
-//class
+// static
 
 
-class Product {
-     constructor(name, price){
-          this.name = name;
-          this.price = price;
+class User {
+     static userCount = 0;
+     constructor(userName) {
+          this.userName = userName;
+          User.userCount++
      }
-     displayProduct(){
-          console.log(`Product : ${this.name}`)
-          console.log(`price$ ${this.price.toFixed(2)}`)
+     static getUserCount (){
+          console.log(`there are ${User.userCount} users online`)
      }
-     calculateTotal(salesTaxe) {
-          return this.price + (this.price * salesTaxe)
+     sayHello(){
+          console.log(`hello, my user name is ${this.userName}`)
      }
 }
-const product1 = new Product('shirt', 19.99);
-const product2 = new Product('pants', 22.50);
-const product3 = new Product('underwear', 100.00);
-const salesTaxes = 0.05;
-product1.displayProduct();
-product2.displayProduct();
-product3.displayProduct();
-
-const total = product1.calculateTotal(salesTaxes)
-const total2 = product2.calculateTotal(salesTaxes)
+const user1 = new User('boz');
+const user2 = new User('anl');
+const user3 = new User('ahm');
+user1.sayHello();
+user2.sayHello();
+user3.sayHello()
+User.getUserCount()
 
 
-console.log(`total price (with tax) $${total.toFixed(2)}`)
+
+
+console.log(User.userCount)
 
