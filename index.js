@@ -1,23 +1,9 @@
-function createGame(){
-  let score = 0;
-
-  function increaseScore(points) {
-    score += points;
-    console.log(`+${points}pts`);
-  }
-  function decreaseScore(points) {
-    score -= points;
-    console.log(`-${points}pts`);
-  }
-  function getScore(){
-    return score;
-  }
-  return {increaseScore, decreaseScore, getScore}
-
+let timeOutId;
+function startTimer (){
+  timeOutId = setTimeout(() => window.alert('hello'), 3000);
+  console.log('STARTED')
 }
-const game = createGame()
-game.increaseScore(5);
-game.increaseScore(6);
-game.decreaseScore(3);
-console.log(`the final is ${game.getScore()} pts`)
-
+function cleartTimer (){
+  clearTimeout(timeOutId);
+  console.log('CLEARED')
+}
