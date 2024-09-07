@@ -1,12 +1,23 @@
-//shuffle algorithm
-const cards = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
-shuffle(cards)
-console.log(cards) 
-function shuffle(array){
-    for(let i = array.length - 1; i > 0; i-- ){
-        const random =Math.floor( Math.random() * (i + 1));
-        [array[i], array[random]] = [array[random], array[i]] 
-    }
+function createGame(){
+  let score = 0;
+
+  function increaseScore(points) {
+    score += points;
+    console.log(`+${points}pts`);
+  }
+  function decreaseScore(points) {
+    score -= points;
+    console.log(`-${points}pts`);
+  }
+  function getScore(){
+    return score;
+  }
+  return {increaseScore, decreaseScore, getScore}
 
 }
+const game = createGame()
+game.increaseScore(5);
+game.increaseScore(6);
+game.decreaseScore(3);
+console.log(`the final is ${game.getScore()} pts`)
 
