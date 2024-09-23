@@ -1,23 +1,17 @@
+const myBox = document.getElementById('myBox');
 
-const newListItem = document.createElement('li');
-newListItem.textContent = 'coconut';
-newListItem.id = 'coconut';
-newListItem.style.fontWeight = 'bold'
-newListItem.style.background = 'lightgreen'
+const myButton = document.getElementById('myButton')
+myButton.addEventListener('click', event => {
+    //console.log(event)
+    myBox.style.backgroundColor = 'red';
+    myBox.textContent =  'OUCH! 😣';
+} );
 
-//document.body.append(newListItem)
-//document.getElementById('fruits').prepend(newListItem);
-
-//document.getElementById('orange').append(newListItem);
-//const orange = document.getElementById('orange');
-
-//document.getElementById('fruits').insertBefore(newListItem, orange)
-
-
-//if dont have id
-
-const listItem = document.querySelectorAll('#fruits li ');
-
-document.getElementById('fruits').insertBefore(newListItem, listItem[2])
-
-document.getElementById('fruits').removeChild(newListItem)
+myButton.addEventListener('mouseover', event =>{
+    myBox.style.backgroundColor = 'yellow';
+    myBox.textContent =  "Don't do it 😥";
+} );
+myButton.addEventListener('mouseout', event => {
+    myBox.style.backgroundColor = 'lightgreen';
+    myBox.textContent =  "Click me 😊";
+});
