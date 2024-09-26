@@ -1,17 +1,41 @@
 const myBox = document.getElementById('myBox');
+const moveAmount = 10;
+let x  =0;
+let y = 0;
 
-const myButton = document.getElementById('myButton')
-myButton.addEventListener('click', event => {
-    //console.log(event)
-    myBox.style.backgroundColor = 'red';
-    myBox.textContent =  'OUCH! 😣';
-} );
+document.addEventListener('keydown', event => {
+    myBox.textContent = '😥';
+    myBox.style.background = 'red'
+})
+document.addEventListener('keyup', event => {
+    myBox.textContent = '😁';
+    myBox.style.background = 'lightgreen'
+})
 
-myButton.addEventListener('mouseover', event =>{
-    myBox.style.backgroundColor = 'yellow';
-    myBox.textContent =  "Don't do it 😥";
-} );
-myButton.addEventListener('mouseout', event => {
-    myBox.style.backgroundColor = 'lightgreen';
-    myBox.textContent =  "Click me 😊";
-});
+document.addEventListener('keydown', event => {
+   //console.log(event.key)
+   if(event.key.startsWith('Arrow')){
+      event.preventDefault()
+     switch(event.key){
+        case 'ArrowUp':
+            y -= moveAmount;
+            break;
+        case 'ArrowDown':
+            y += moveAmount;
+            break;
+        case 'ArrowLeft' :
+            x -= moveAmount;
+            break;
+        case 'ArrowRight' :
+            x += moveAmount;
+            break;          
+
+    }
+    myBox.style.top = `${y}px`;
+    myBox.style.left = `${x}px`;
+    //console.log(myBox.style.top, myBox.style.left)
+
+
+
+   }
+})
