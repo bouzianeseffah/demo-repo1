@@ -1,3 +1,9 @@
-#myBtn{
-    font-size: 2rem;
+.myBtns{
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: rgb(173, 173, 247);
+    color: rgb(247, 247, 247);
 }
