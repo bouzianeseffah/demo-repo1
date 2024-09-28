@@ -1,9 +1,22 @@
-.myBtns{
+#myH1{
+    font-size: 5rem;
+}
+#myBtn{
     font-size: 4rem;
     margin: 10px;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
-    background-color: rgb(173, 173, 247);
-    color: rgb(247, 247, 247);
+}
+.enabled{
+    background-color: blue;
+    color: aliceblue;
+}
+.hover{
+    box-shadow: 0 0 10px black;
+    font-weight: bold;
+}
+.disabled{
+    background-color: red;
+    color: blueviolet;
 }

@@ -1,53 +1,47 @@
-let buttons = document.querySelectorAll('.myBtns');
-//NodeList
-//console.log(buttons)
 
+const myButton = document.getElementById('myBtn');
+const myH1 = document.getElementById('myH1');
+ myH1.classList.add('enabled');
+// myButton.classList.add('enabled');
+// myButton.classList.remove('enabled');
 
-//add HTML/CSS properties
-// buttons.forEach(button => {
-//     button.style.backgroundColor = 'green';
-//     button.textContent += '😁'
-
+// myButton.addEventListener ('mouseover', event => {
+//     event.target.classList.add('hover');
+    
+// });
+// myButton.addEventListener ('mouseout', event => {
+//     event.target.classList.remove('hover');
+    
 // })
 
+// myButton.addEventListener ('mouseover', event => {
+//        event.target.classList.toggle('hover');
+        
+//      });
+// myButton.addEventListener ('mouseout', event => {
+//             event.target.classList.toggle('hover');
+            
+//         });
 
-// CLICK event listener
-// buttons.forEach(button => {
-//    button.addEventListener('click' , event => {
-//       event.target.style.backgroundColor = 'red'
-//    })
-// })
+// myButton.classList.add('enabled');
 
-//mouseover, mouseout
-// buttons.forEach(button => {
-//     button.addEventListener('mouseover' , event => {
-//         event.target.style.backgroundColor = 'red'
-//     })
-// })
-// buttons.forEach(button => {
-//     button.addEventListener('mouseout' , event => {
-//         event.target.style.backgroundColor= 'rgb(173, 173, 247)';
+// myButton.addEventListener('click', event => {
+//     if (event.target.classList.contains('disabled')) {
+//         event.target.textContent += '😁'
+//     }
+//      else {
+//         event.target.classList.replace('enabled', 'disabled');
 
-//     });
+//     }
+// });
 
-//add an Element
 
-// const newButton = document.createElement('button');
-// newButton.textContent = 'Button5';
-// newButton.classList = 'myBtns';
-// document.body.appendChild(newButton);
-// console.log(buttons);// only 4 button 
-// buttons = document.querySelectorAll('.myBtns')
-
-// console.log(buttons)//5 buttons
-
-//remove an element
-
-buttons.forEach(button => {
-    button.addEventListener('click', event => {
-        event.target.remove();
-        //console.log(buttons)//style 4 buttons
-        buttons = document.querySelectorAll('.myBtns')
-        console.log(buttons) 
-    })
-})
+myH1.addEventListener('click', event => {
+        if (event.target.classList.contains('disabled')) {
+            event.target.textContent += '😁'
+        }
+         else {
+            event.target.classList.replace('enabled', 'disabled');
+    
+       }
+     });
