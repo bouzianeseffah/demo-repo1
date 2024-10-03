@@ -1,35 +1,49 @@
-const slides = document.querySelectorAll('.slides img');
-let slidesIndex = 0;
-let intervalId = null;
-//initializeSlider();
-document.addEventListener('DOMContentLoaded',initializeSlider);
-function initializeSlider(){
-    if(slides.length > 0){
-        slides[slidesIndex].classList.add('displaySlide');
-        intervalId =  setInterval(nextSlide, 5000);
-        //console.log(intervalId);
-    }
+function walkDog() {
+ 
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const dogWalk = true;
+            if (dogWalk) {
+                resolve('you walk the dog')
+            }else{
+                reject('you Didnt walk the dog')
+            }
+        },1500);
+    } )
+};
+function cleanKitchen() {
+    return new Promise ((resolve, reject) => {
+    setTimeout(() => {
+        kitchenClean = true;
+        if (kitchenClean) {
+            resolve('you clean the kitchen');
+        }else{
+            reject('you didnt clean the kitchen')
+        }
+       
+    }, 2500);
+     
+    })
+};
+
+function takeOut() {
    
-}
-function showSlide(index){
-    if(index >= slides.length){
-       slidesIndex = 0
-    }
-    else if (index < 0){
-      slidesIndex = slides.length -1;
-    }
-   slides.forEach(slide => {
-    slide.classList.remove('displaySlide');
-   })
-   slides[slidesIndex].classList.add('displaySlide')
-}
-function prevSlide(){
-    clearInterval(intervalId)
-    slidesIndex--;
-    showSlide(slidesIndex);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const trashOut = true;
+            if (trashOut) {
+                resolve('take out the trash');
+            }else{
+                reject('you didnt take out the trash')
+            }
+           
+            
+        },500);
+    })
 
 }
-function nextSlide(){
-    slidesIndex++
-    showSlide(slidesIndex)
-}
+
+walkDog().then(value => {console.log(value); return cleanKitchen()})
+         .then(value => {console.log(value); return takeOut()})
+         .then(value => {console.log(value); console.log('you finished the chores')})
+         .catch(error => console.error(error))
