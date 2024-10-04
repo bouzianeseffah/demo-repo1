@@ -1,63 +1,14 @@
-async function walkDog() {
- 
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            //const dogWalk = true;
-            const dogWalk = false;
+// const jsonNames = `["bouz", "aml", "fat", "nab"]`;
+// const jsonPerson = `{ "name": "boz","age": 30,"isEmloyed": true,"hobies": ["writing", "karate", "cooking"]}`;
+// const jsonPeople = `[{"name": "boz","age": 30,"isEmloyed": true},
+//                    {"name": "aml","age": 34,"isEmloyed": false},
+//                    {"name": "nab","age": 33,"isEmloyed": true},
+//                    {"name": "fat","age": 25,"isEmloyed": false}]`;
 
-            if (dogWalk) {
-                resolve('you walk the dog')
-            }else{
-                reject('you Didnt walk the dog')
-            }
-        },1500);
-    } )
-};
-function cleanKitchen() {
-    return new Promise ((resolve, reject) => {
-    setTimeout(() => {
-        kitchenClean = true;
-        if (kitchenClean) {
-            resolve('you clean the kitchen');
-        }else{
-            reject('you didnt clean the kitchen')
-        }
-       
-    }, 2500);
-     
-    })
-};
+// const parsedData = JSON.parse(jsonPerson);
+// console.log(parsedData)
 
-function takeOut() {
-   
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const trashOut = true;
-            if (trashOut) {
-                resolve('take out the trash');
-            }else{
-                reject('you didnt take out the trash')
-            }
-           
-            
-        },500);
-    })
-
-}
-
-async function doChores() {
-    try {
-        const walkDogResult = await walkDog();
-    console.log(walkDogResult);
-    const cleanKitchenResult = await cleanKitchen();
-    console.log(cleanKitchenResult);
-    const takeOutResult = await takeOut();
-    console.log(takeOutResult);
-
-    console.log('you finished all the chores')
-    } catch (error) {
-        console.error(error)
-    }
-    
-}
-doChores()
+fetch('people.json')
+     .then(response => response.json())
+     .then(values => values.forEach(value => console.log(value.name)))
+     .catch(error => console.error(error));
