@@ -1,14 +1,28 @@
-// const jsonNames = `["bouz", "aml", "fat", "nab"]`;
-// const jsonPerson = `{ "name": "boz","age": 30,"isEmloyed": true,"hobies": ["writing", "karate", "cooking"]}`;
-// const jsonPeople = `[{"name": "boz","age": 30,"isEmloyed": true},
-//                    {"name": "aml","age": 34,"isEmloyed": false},
-//                    {"name": "nab","age": 33,"isEmloyed": true},
-//                    {"name": "fat","age": 25,"isEmloyed": false}]`;
+// fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+//      .then(responce => {
+//           if(!responce.ok ){
+//              throw new Error('could not fetch resource')
+//           }
+//           return responce.json()
+//      })
+//      .then(data => console.log(data.name))
+//      .catch(error => console.error(error))
 
-// const parsedData = JSON.parse(jsonPerson);
-// console.log(parsedData)
-
-fetch('people.json')
-     .then(response => response.json())
-     .then(values => values.forEach(value => console.log(value.name)))
-     .catch(error => console.error(error));
+async function fetchData(){
+     try {
+          const pokemonName = document.getElementById('pokemoneName').value.toLowerCase();
+          
+          const responce = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+          if(!responce.ok) {
+               throw new Error('could not fetch resource')
+          }
+          const data = await responce.json();
+           //console.log(data)
+           const pokemoneSprite = data.sprites.front_default;
+           const imgElement = document.getElementById('pokemonSprite');
+           imgElement.src = pokemoneSprite;
+           imgElement.style.display = 'block';
+     } catch (error) {
+          console.error(error);
+     }
+}
